@@ -7,14 +7,14 @@ const Time = (props) => {
     const border = {borderColor: props.corPrimaria};
 
     return (
-        <section className="time" style={background}>
+        (props.colaboradores.length > 0) ? <section className="time" style={background}>
             <h3 style={border}> {props.nome} </h3>
 
             <div className="colaboradores">
-            {props.colaboradores.map (colaborador => <Colaborador nome={colaborador.nome} imagem={colaborador.imagem} cargo={colaborador.cargo} />)} 
+            {props.colaboradores.map (colaborador => <Colaborador corDeFundo = {props.corPrimaria} key={colaborador.nome} nome={colaborador.nome} imagem={colaborador.imagem} cargo={colaborador.cargo} />)} 
             </div>
-            
         </section>
+        : ""
     )
 }
 
